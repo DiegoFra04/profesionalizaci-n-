@@ -1,0 +1,125 @@
+/* Contenedor principal */
+.payment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f3f4f6;
+}
+
+/* Encabezado */
+.Encabezado {
+    background-color: salmon;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    width: fit-content;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+/* Sección de pago */
+.payment-section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Título de la sección */
+.payment-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Texto de información */
+.payment-section p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Etiquetas y campos de entrada */
+.payment-section label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #333;
+    font-size: 14px;
+}
+
+.payment-section input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Detalles de la tarjeta (Fecha de expiración y CVV) */
+.card-details {
+    display: flex;
+    gap: 10px;
+}
+
+.card-details input {
+    width: calc(50% - 5px); /* Cada input ocupa la mitad del espacio */
+}
+
+/* Botón de confirmación */
+.confirm-button {
+    width: 100%;
+    background-color: salmon;
+    color: #ffffff;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.cancelar-button {
+    width: 100%;
+    background-color: darksalmon;
+    color: brown;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.confirm-button:hover {
+    background-color: #e57373;
+}
+
+.buy-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}

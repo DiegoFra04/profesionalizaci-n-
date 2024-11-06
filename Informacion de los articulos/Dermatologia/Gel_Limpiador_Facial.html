@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gel Limpiador Facial</title>
+    <link rel="stylesheet" href="Css/gel_Limpiador_Facial.css">
+
+</head>
+<body>
+    <header class="header">
+        <h1>Farmacéutica Honshitsu</h1>
+        <p>Dermatologia</p>
+        <nav>
+            <ul class="Secciones">
+                <li><a href="javascript:history.back()" class="back-button">← VOLVER</a></li>
+                <li><a href="../../Carrito.html">CARRITO</a></li>
+            </ul>
+        </nav> 
+        
+    </header>
+
+    <main class="product-main">
+        <section class="product-info">
+            <div class="product-image">
+                <img src="imagenes/oilfree.jfif" alt="Paracetamol" />
+            </div> 
+            <div class="product-description">
+                <h2>Gel Limpiador Facial</h2>
+                <p>
+                    Realiza un tratamiento y ayuda a prevenir brotes en un simple paso con este potente 
+                    tratamiento y limpiador para el acné. La fórmula sin aceite no solo limpia profundamente
+                     de manera suave los poros para lucir una piel sin imperfecciones, 
+                     sino que además contiene ácido salicílico para ayudar a eliminar el acné y 
+                     prevenir brotes futuros. Además, los emolientes especiales ayudan a que la piel no quede seca.
+                </p>
+                <ul>
+                    <li>Limpiador facial contra el acné recomendado por los dermatólogos.</li>
+                    <li>Se enjuagua sin resecar ni irritar la piel.</li>
+                    <li>La fórmula no comedogénica sin aceite no tapa los poros.</li>
+                </ul>
+                <h3>Precio: $475.00</h3>
+                <div class="product">
+                    <label for="cantidad1">Cantidad:</label>
+                    <input type="number" id="cantidad1" min="1" value="1">
+                    <button onclick="addToCart('Gel Limpiador Facial', 475, 'cantidad1')">Agregar al carrito</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <aside>
+        <hr>
+    </aside>
+
+    <footer class="footer">
+        <p>&copy; 2024 Farmacéutica Honshitsu. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para agregar productos al carrito y guardarlos en localStorage
+        function addToCart(productName, price, quantityId) {
+            const quantity = parseInt(document.getElementById(quantityId).value);
+
+            if (quantity <= 0 || isNaN(quantity)) {
+                alert("Por favor, ingrese una cantidad válida.");
+                return;
+            }
+
+            // Obtener el carrito del localStorage o inicializar uno vacío
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Verificar si el producto ya existe en el carrito
+            const existingProduct = cart.find(item => item.name === productName);
+            if (existingProduct) {
+                existingProduct.quantity += quantity;
+            } else {
+                cart.push({ name: productName, price: price, quantity: quantity });
+            }
+
+            // Guardar el carrito actualizado en localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`${productName} agregado al carrito`);
+        }
+    </script>
+</body>
+</html>

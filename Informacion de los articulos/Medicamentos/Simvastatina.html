@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simvastatina</title>
+    <link rel="stylesheet" href="Css/simvastatina.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Farmacéutica Honshitsu</h1>
+        <p>Medicamentos</p>
+        <nav>
+            <ul class="Secciones">
+                <li><a href="javascript:history.back()" class="back-button">← VOLVER</a></li>
+                <li><a href="../../Carrito.html">CARRITO</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <main class="product-main">
+        <section class="product-info">
+            <div class="product-image">
+                <img src="imagenes/simvastatina.jfif" alt="Paracetamol" />
+            </div> 
+            <div class="product-description">
+                <h2>Simvastatina</h2>
+                <p>
+                    La simvastatina es un medicamentos de la clase de las estatinas indicada 
+                    para disminuir la cantidad de colesterol malo (LDL) y triglicéridos en la 
+                    sangre, que, cuando están elevados, pueden depositarse en la pared de los 
+                    vasos sanguíneos, causando estrechamiento o taponamiento, aumentando el 
+                    riesgo de infarto o derrame cerebral.
+                </p>
+                <p>
+                    De esta forma, la simvastatina se utiliza para la prevención y reducción 
+                    del riesgo de enfermedades cardiovasculares como infarto o ACV, además de 
+                    enfermedad vascular periférica asociada a diabetes o enfermedad coronaria.
+                </p>
+                <h3>Precio: $40.00</h3>
+                <div class="products">
+                    <div class="product">
+                        <label for="cantidad1">Cantidad:</label>
+                        <input type="number" id="cantidad1" min="1" value="1">
+                        <button onclick="addToCart('Simvastatina', 40, 'cantidad1')">Agregar al carrito</button>
+                    </div>
+            </div>
+        </section>
+    </main>
+    <aside>
+        <hr>
+    </aside>
+
+    <footer class="footer">
+        <p>&copy; 2024 Farmacéutica Honshitsu. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para agregar productos al carrito y guardarlos en localStorage
+        function addToCart(productName, price, quantityId) {
+            const quantity = parseInt(document.getElementById(quantityId).value);
+
+            if (quantity <= 0 || isNaN(quantity)) {
+                alert("Por favor, ingrese una cantidad válida.");
+                return;
+            }
+
+            // Obtener el carrito del localStorage o inicializar uno vacío
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Verificar si el producto ya existe en el carrito
+            const existingProduct = cart.find(item => item.name === productName);
+            if (existingProduct) {
+                existingProduct.quantity += quantity;
+            } else {
+                cart.push({ name: productName, price: price, quantity: quantity });
+            }
+
+            // Guardar el carrito actualizado en localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`${productName} agregado al carrito`);
+        }
+    </script>
+</body>
+</html>

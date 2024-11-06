@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bromuropin</title>
+    <link rel="stylesheet" href="Css/bromuropin.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Farmacéutica Honshitsu</h1>
+        <p>Medicamentos</p>
+        <nav>
+            <ul class="Secciones">
+                <li><a href="javascript:history.back()" class="back-button">← VOLVER</a></li>
+                <li><a href="../../Carrito.html">CARRITO</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <main class="product-main">
+        <section class="product-info">
+            <div class="product-image">
+                <img src="imagenes/bropinaverio.jfif" alt="Paracetamol" />
+            </div> 
+            <div class="product-description">
+                <h2>Bromuro de Pinaverio</h2>
+                <p>
+                    El bromuro de pinaverio es un medicamento que se utiliza para el tratamiento 
+                    sintomático del dolor, trastornos del tránsito intestinal y molestias asociadas con 
+                    alteraciones funcionales intestinales, gracias a su efecto espasmolítico.
+                </p>
+                <p>
+                    Los usos principales del bromuro de pinaverio son:
+                </p>
+                <ul>
+                    <li>Disminuye la duración del tránsito intestinal.</li>
+                    <li>Facilita las evacuaciones ante la presencia de estreñimiento.</li>
+                    <li>Relaja el tránsito gastrointestinal.</li>
+                    <li>Mejora los trastornos de motilidad movimiento del esófago es decir 
+                        mejora los problemas que se puedan presentar en el recorrido del bolo 
+                        alimenticio desde la faringe hasta el estómago.</li>
+                </ul>
+                <h3>Precio: $84.00</h3>
+                <div class="products">
+                    <div class="product">
+                        <label for="cantidad1">Cantidad:</label>
+                        <input type="number" id="cantidad1" min="1" value="1">
+                        <button onclick="addToCart('Bromuro de Pinaverio', 84, 'cantidad1')">Agregar al carrito</button>
+                    </div>
+            </div>
+        </section>
+    </main>
+    <aside>
+        <hr> 
+    </aside>
+
+    <footer class="footer">
+        <p>&copy; 2024 Farmacéutica Honshitsu. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para agregar productos al carrito y guardarlos en localStorage
+        function addToCart(productName, price, quantityId) {
+            const quantity = parseInt(document.getElementById(quantityId).value);
+
+            if (quantity <= 0 || isNaN(quantity)) {
+                alert("Por favor, ingrese una cantidad válida.");
+                return;
+            }
+
+            // Obtener el carrito del localStorage o inicializar uno vacío
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Verificar si el producto ya existe en el carrito
+            const existingProduct = cart.find(item => item.name === productName);
+            if (existingProduct) {
+                existingProduct.quantity += quantity;
+            } else {
+                cart.push({ name: productName, price: price, quantity: quantity });
+            }
+
+            // Guardar el carrito actualizado en localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`${productName} agregado al carrito`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Estilosweb/pago.css">
+    <title>Metodo de Pago</title>
+</head>
+<body>
+    <div class="payment-container">
+        <div class="Encabezado">Método de Pago</div>
+        <section class="payment-section">
+            <h2>Información de Pago</h2>
+            <p>Selecciona tu método de pago preferido y proporciona los datos necesarios para completar la compra de forma segura.</p>
+            
+            <label for="card-name">Nombre en la Tarjeta</label>
+            <input type="text" id="card-name" placeholder="Nombre Completo">
+    
+            <label for="card-number">Número de Tarjeta</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9123 4567">
+    
+            <div class="card-details">
+                <label for="expiry-date">Fecha de Expiración</label>
+                <input type="text" id="expiry-date" placeholder="MM/AA">
+                
+                <label for="cvv">CVV</label>
+                <input type="password" id="cvv" placeholder="***">
+            </div>
+    
+            <div class="confirm-button"> 
+                <a href="Fin.html">Confirmar Pago</a>
+            </div>
+
+            <div class="cancelar-button">
+                <a href="javascript:history.back()">Cancelar Pago</a>
+            </div>
+        </section>
+    </div>
+    
+</body>
+</html>

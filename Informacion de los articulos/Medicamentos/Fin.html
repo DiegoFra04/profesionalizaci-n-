@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra</title>
+    <link rel="stylesheet" href="Css/Fin.css">
+
+
+</head>
+
+
+<body>
+    <header>
+        <h1>Farmacéutica Honshitsu</h1>
+        <h2>Medicamentos</h2>
+    </header>
+        <div id="mensaje-compra" class="oculto">
+            <h3>Gracias por comprar el producto</h3>
+        </div>
+    </section>
+
+    <div class="opciones">
+        <a href="javascript:history.back()" class="back-button">← Volver</a>
+        <button id="salir-btn">Salir</button>
+    </div>
+
+    <script>
+            document.getElementById('salir-btn').addEventListener('click', function() {
+            alert('Gracias por visitarnos. Cerrando la página...');
+            window.close(); 
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locion Limpiadora</title>
+    <link rel="stylesheet" href="Css/locion_Limpiadora.css">
+
+</head>
+<body>
+    <header class="header">
+        <h1>Farmacéutica Honshitsu</h1>
+        <p>Dermatologia</p>
+        <nav>
+            <ul class="Secciones">
+                <li><a href="javascript:history.back()" class="back-button">← VOLVER</a></li>
+                <li><a href="../../Carrito.html">CARRITO</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <main class="product-main">
+        <section class="product-info">
+            <div class="product-image">
+                <img src="imagenes/cetaphil.jfif" alt="Paracetamol" />
+            </div> 
+            <div class="product-description">
+                <h2>Locion Limpiadora</h2>
+                <p>
+                    Producto de cuidado de la piel diseñado para limpiar suavemente sin irritar. 
+                </p>
+                <p>
+                    Cetaphil es una marca conocida por desarrollar productos que son suaves y 
+                    efectivos, especialmente recomendados para personas con piel sensible.
+                </p>
+                <h3>Precio: $299.00</h3>
+                <div class="product">
+                    <label for="cantidad1">Cantidad:</label>
+                    <input type="number" id="cantidad1" min="1" value="1">
+                    <button onclick="addToCart('Locion Limpiadora Cetaphil', 299, 'cantidad1')">Agregar al carrito</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <aside>
+        <hr> 
+    </aside>
+
+    <footer class="footer">
+        <p>&copy; 2024 Farmacéutica Honshitsu. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para agregar productos al carrito y guardarlos en localStorage
+        function addToCart(productName, price, quantityId) {
+            const quantity = parseInt(document.getElementById(quantityId).value);
+
+            if (quantity <= 0 || isNaN(quantity)) {
+                alert("Por favor, ingrese una cantidad válida.");
+                return;
+            }
+
+            // Obtener el carrito del localStorage o inicializar uno vacío
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Verificar si el producto ya existe en el carrito
+            const existingProduct = cart.find(item => item.name === productName);
+            if (existingProduct) {
+                existingProduct.quantity += quantity;
+            } else {
+                cart.push({ name: productName, price: price, quantity: quantity });
+            }
+
+            // Guardar el carrito actualizado en localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`${productName} agregado al carrito`);
+        }
+    </script>
+</body>
+</html>
