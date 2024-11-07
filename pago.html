@@ -26,14 +26,20 @@
                 <label for="cvv">CVV</label>
                 <input type="password" id="cvv" placeholder="***">
             </div>
-    
-            <div class="confirm-button"> 
-                <a href="Fin.html">Confirmar Pago</a>
-            </div>
 
-            <div class="cancelar-button">
-                <a href="javascript:history.back()">Cancelar Pago</a>
-            </div>
+            <ul id="cart-items"></ul>
+            <p id="total">Total: $0</p>
+
+
+            
+                
+            <a class="confirm-button" onclick="checkout()">Confirmar pago</a>
+            
+            <script src="Carrito.js"></script>
+
+        
+            <a class="cancelar-button" href="javascript:history.back()">Cancelar</a>
+            
         </section>
     </div>
     
