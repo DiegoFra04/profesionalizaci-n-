@@ -1,5 +1,8 @@
 /* Contenedor principal */
 .payment-container {
+    width: 100%;
+    max-width: 2200px; /* Ancho máximo para pantallas grandes */
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,6 +11,13 @@
     background-color: #f3f4f6;
 }
 
+input[type="text"], input[type="password"] {
+    width: 100%; /* Hace que los campos ocupen todo el ancho */
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
 /* Encabezado */
 .Encabezado {
     background-color: goldenrod;
@@ -30,8 +40,8 @@
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
+    max-width: 1000px;
+    width: 120%;
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -44,7 +54,7 @@
 }
 
 /* Texto de información */
-.payment-section p {
+.payment-section .e {
     color: #666;
     margin-bottom: 20px;
 }
@@ -72,7 +82,8 @@
 /* Detalles de la tarjeta (Fecha de expiración y CVV) */
 .card-details {
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    
 }
 
 .card-details input {
@@ -122,4 +133,25 @@
 a {
     color: black;
     text-decoration: none;
+}
+
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+
+#card-name{
+    text-align: center;
+}
+
+#card-number{
+    text-align: center;
+}
+
+.nombre{
+    text-align: center;
+    color: black;
 }

@@ -11,20 +11,26 @@
         <div class="Encabezado">Método de Pago</div>
         <section class="payment-section">
             <h2>Información de Pago</h2>
-            <p>Selecciona tu método de pago preferido y proporciona los datos necesarios para completar la compra de forma segura.</p>
+            <p class="e">Selecciona tu método de pago preferido y proporciona los datos necesarios para completar la compra de forma segura.</p>
+           
             
-            <label for="card-name">Nombre en la Tarjeta</label>
+            <p class="nombre">Nombre en la Tarjeta</p>
             <input type="text" id="card-name" placeholder="Nombre Completo">
-    
-            <label for="card-number">Número de Tarjeta</label>
-            <input type="text" id="card-number" placeholder="1234 5678 9123 4567">
-    
+            <span id="card-name-error" class="error-message"></span> <!-- Error para nombre -->
+
+            
+            <p class="nombre">Número de Tarjeta</p>
+            <input type="text" id="card-number" placeholder="E.j 1234 5678 9123 4567">
+            <span id="card-number-error" class="error-message"></span> <!-- Error para número de tarjeta -->
+        
             <div class="card-details">
                 <label for="expiry-date">Fecha de Expiración</label>
                 <input type="text" id="expiry-date" placeholder="MM/AA">
+                <span id="expiry-date-error" class="error-message"></span> <!-- Error para fecha de expiración -->
                 
                 <label for="cvv">CVV</label>
                 <input type="password" id="cvv" placeholder="***">
+                <span id="cvv-error" class="error-message"></span> <!-- Error para CVV -->
             </div>
 
             <ul id="cart-items"></ul>
