@@ -113,7 +113,8 @@ a{
   flex-direction: column;
   align-items: center;
   font-family: Arial, sans-serif;
-  margin-top: 20px;
+  min-height: 70vh; /* Aumenta el espacio vertical */
+  justify-content: center; /* Centrar verticalmente */
 }
 
 /* Estilo para los productos */
@@ -152,16 +153,24 @@ a{
 /* Estilo para el carrito */
 .cart {
   width: 300px;
+  min-height: 300px; /* Añadido para estirar el contenedor */
   background-color: #f9f9f9;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Para estirar y centrar el contenido */
+  margin-bottom: 40px; /* Espacio adicional para separación */
 }
 
 .cart ul {
   list-style-type: none;
   padding: 0;
+  margin-bottom: 20px; /* Espacio para los elementos */
+  flex-grow: 1;
+  overflow-y: auto; /* Scroll si hay muchos productos */
 }
 
 .cart li {
@@ -174,6 +183,7 @@ a{
 .cart p {
   font-weight: bold;
   margin-top: 10px;
+  margin: 20px 0; /* Espacio adicional para el total */
 }
 
 .cart button {
