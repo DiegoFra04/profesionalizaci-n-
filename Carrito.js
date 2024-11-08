@@ -24,6 +24,7 @@ function loadCart() {
         cartItems.appendChild(li);
     });
 
+    
     // Actualizar el total
     document.getElementById('total').innerText = `Total: $${total}`;
 
@@ -38,66 +39,121 @@ function removeFromCart(index) {
 }
 
 function validatePaymentForm() {
-    // Obtener los valores de los campos
-    const cardName = document.getElementById('card-name').value.trim();
-    const cardNumber = document.getElementById('card-number').value.trim();
-    const expiryDate = document.getElementById('expiry-date').value.trim();
-    const cvv = document.getElementById('cvv').value.trim();
-
-    // Limpiar mensajes de error anteriores
-    document.getElementById('card-name-error').innerText = "";
-    document.getElementById('card-number-error').innerText = "";
-    document.getElementById('expiry-date-error').innerText = "";
-    document.getElementById('cvv-error').innerText = "";
+    // Obtener los valores de los campos del formulario
+    const name = document.getElementById("card-name").value.trim();
+    const cardNumber = document.getElementById("card-number").value.trim();
+    const expiryDate = document.getElementById("expiry-date").value.trim();
+    const cvv = document.getElementById("cvv").value.trim();
 
     let isValid = true;
 
-    // Validación del nombre en la tarjeta (sin números)
-    const nameRegex = /^[a-zA-Z\s]+$/;
-    if (!nameRegex.test(cardName)) {
-        document.getElementById('card-name-error').innerText = "El nombre no debe contener números.";
+    // Validar Nombre en la Tarjeta (no vacío, solo letras y espacios)
+    if (name === "") {
+        showError("card-name-error", "El nombre no puede estar vacío.");
         isValid = false;
+    } else if (!/^[a-zA-Z\sáéíóúÁÉÍÓÚñÑ]+$/.test(name)) {
+        showError("card-name-error", "El nombre solo debe contener letras y espacios.");
+        isValid = false;
+    } else {
+        clearError("card-name-error");
     }
 
-    // Validación del número de tarjeta (solo números y al menos 16 dígitos, permitiendo espacios)
-    const cleanedCardNumber = cardNumber.replace(/\s+/g, ''); // Quitar espacios para la validación
-    const cardNumberRegex = /^\d+$/;
-    if (!cardNumberRegex.test(cleanedCardNumber) || cleanedCardNumber.length < 16) {
-        document.getElementById('card-number-error').innerText = "El número de tarjeta debe tener al menos 16 dígitos y no debe contener letras.";
+    // Validar Número de Tarjeta (16 dígitos exactos)
+    if (cardNumber === "") {
+        showError("card-number-error", "El número de tarjeta no puede estar vacío.");
         isValid = false;
+    } else if (!/^\d{16}$/.test(cardNumber.replace(/\s+/g, ''))) {
+        showError("card-number-error", "El número de tarjeta debe tener 16 dígitos.");
+        isValid = false;
+    } else {
+        clearError("card-number-error");
     }
 
-    // Validación de la fecha de expiración en formato MM/AA
-    const expiryDateRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
-    if (!expiryDateRegex.test(expiryDate)) {
-        document.getElementById('expiry-date-error').innerText = "La fecha debe tener el formato MM/AA.";
+    // Validar Fecha de Expiración (formato MM/AA)
+    if (expiryDate === "") {
+        showError("expiry-date-error", "La fecha de expiración no puede estar vacía.");
         isValid = false;
+    } else if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(expiryDate)) {
+        showError("expiry-date-error", "La fecha debe tener el formato MM/AA.");
+        isValid = false;
+    } else {
+        clearError("expiry-date-error");
     }
 
-    // Validación del CVV (exactamente 3 dígitos y solo números)
-    const cvvRegex = /^\d{3}$/;
-    if (!cvvRegex.test(cvv)) {
-        document.getElementById('cvv-error').innerText = "El CVV debe tener 3 dígitos y no debe contener letras.";
+    // Validar CVV (3 dígitos exactos)
+    if (cvv === "") {
+        showError("cvv-error", "El CVV no puede estar vacío.");
         isValid = false;
+    } else if (!/^\d{3}$/.test(cvv)) {
+        showError("cvv-error", "El CVV debe tener 3 dígitos.");
+        isValid = false;
+    } else {
+        clearError("cvv-error");
     }
+
+    // Si todas las validaciones son correctas
+    if (isValid) {
+        alert("Pago confirmado");
+    }
+
 
     return isValid;
+
+    function showError(elementId, message) {
+        const errorElement = document.getElementById(elementId);
+        errorElement.textContent = message;
+        errorElement.style.display = "block";
+    }
+    
+    // Función para limpiar mensajes de error
+    function clearError(elementId) {
+        const errorElement = document.getElementById(elementId);
+        errorElement.textContent = "";
+        errorElement.style.display = "none";
+    }
 }
 
+
+
 function checkout() {
+    // Obtener el carrito desde localStorage
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Verificar si el carrito está vacío
     if (cart.length === 0) {
         alert("El carrito está vacío.");
         return;
     }
 
+    // Validar el formulario de pago
     if (validatePaymentForm()) {
+        // Calcular el total del carrito
         let total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
-        alert(`Compra completada. Total de la compra tralizada: $${total}`);
+        
+        // Mostrar mensaje de confirmación
+        alert(`Compra completada. El total de la compra realizada fue de: $${total}`);
+        
+        // Limpiar el carrito y recargar
         localStorage.removeItem("cart");
         loadCart();
+
+        // Redirigir al usuario al carrito después del pago
         window.location.href = "Carrito.html";
     }
+}
+
+function checkCart() {
+    // Obtener el carrito desde localStorage
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    // Verificar si el carrito está vacío
+    if (cart.length === 0) {
+        alert("El carrito está vacío.");
+        return;
+    }
+    
+    // Si hay productos en el carrito, redirigir a la página de pago
+    window.location.href = "pago.html";
 }
 
 
