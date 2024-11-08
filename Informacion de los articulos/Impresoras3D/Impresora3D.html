@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impresora3D</title>
+    <title>IMPRESORA3D</title>
     <link rel="stylesheet" href="Css/Imp3D.css">
 
 </head>
+
 <body>
+
     <body>
         <header class="header">
             <h1>Tecnologia Honshitsu</h1>
-            <p>Impresora 3D</p>
+            <p>IMPRESORA 3D</p>
             <nav>
                 <ul class="Secciones">
                     <li><a href="javascript:history.back()" class="back-button">← VOLVER</a></li>
                     <li><a href="../../Carrito.html">CARRITO</a></li>
                 </ul>
             </nav>
-            
+
         </header>
-    
+
         <main class="product-main">
             <section class="product-info">
                 <div class="product-image">
                     <img src="imagenes/PhrozenSonic3d.jfif" alt="Paracetamol" />
-                </div> 
+                </div>
                 <div class="product-description">
                     <h2>Phrozen Sonic 3D</h2>
                     <p>
-                        ...
+                        Descripción Diseñada para la industria dental, la Sonic 4K 2022 permite imprimir modelos
+                        dentales precisos más rápido que nunca. La impresora 3D dental viene con el software de corte de
+                        impresión 3D dental, Dental Synergy Slicer, que ha simplificado el flujo de trabajo dental con
+                        su interfaz fácil de usar. Pero eso no es todo.
                     </p>
 
-                    <p>
-                       ...
-                    </p>
-                    
                     <h3>Precio: $53,999.00</h3>
                     <div class="products">
                         <div class="product">
                             <label for="cantidad1">Cantidad:</label>
                             <input type="number" id="cantidad1" min="1" value="1">
-                            <button onclick="addToCart('Impresora3D', 53999.00, 'cantidad1')">Agregar al carrito</button>
+                            <button onclick="addToCart('Impresora3D', 53999.00, 'cantidad1')">Agregar al
+                                carrito</button>
                         </div>
-                </div>
+                    </div>
             </section>
         </main>
         <aside>
@@ -58,15 +61,15 @@
             // Función para agregar productos al carrito y guardarlos en localStorage
             function addToCart(productName, price, quantityId) {
                 const quantity = parseInt(document.getElementById(quantityId).value);
-    
+
                 if (quantity <= 0 || isNaN(quantity)) {
                     alert("Por favor, ingrese una cantidad válida.");
                     return;
                 }
-    
+
                 // Obtener el carrito del localStorage o inicializar uno vacío
                 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    
+
                 // Verificar si el producto ya existe en el carrito
                 const existingProduct = cart.find(item => item.name === productName);
                 if (existingProduct) {
@@ -74,11 +77,12 @@
                 } else {
                     cart.push({ name: productName, price: price, quantity: quantity });
                 }
-    
+
                 // Guardar el carrito actualizado en localStorage
                 localStorage.setItem("cart", JSON.stringify(cart));
                 alert(`${productName} agregado al carrito`);
             }
         </script>
-</body>
+    </body>
+
 </html>

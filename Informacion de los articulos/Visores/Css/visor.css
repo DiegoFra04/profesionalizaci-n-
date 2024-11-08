@@ -15,7 +15,7 @@ body {
 
 header {
     grid-area: header;
-    background-color: lightsalmon;
+    background: linear-gradient(90deg, #3498db, #04c9f0);
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -46,7 +46,9 @@ nav ul li{
 }
 
 .Secciones {
-    background-color: crimson;
+    text-transform: uppercase;
+    margin: 0;
+    background-color: rgb(220, 20, 100);
     overflow: hidden;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -123,7 +125,7 @@ main {
 }
 
 .product-description h3 {
-    color: darkorange;
+    color: #db34cd;
     font-size: 1.8em;
     margin-top: 15px;
 }
@@ -136,7 +138,7 @@ aside {
 /* Pie de página */
 .footer {
     grid-area: footer;
-    background-color: salmon;
+    background: linear-gradient(90deg, #3498db, #04c9f0);
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -163,7 +165,7 @@ aside {
 }
   
 .product button {
-    background-color: darkorange;
+    background-color: rgb(27, 162, 0);
     color: white;
     border: none;
     padding: 10px;
@@ -173,5 +175,5 @@ aside {
 }
   
 .product button:hover {
-    background-color: orange;
+    background-color: rgb(45, 255, 3);
 }
