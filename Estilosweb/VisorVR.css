@@ -3,7 +3,7 @@ header {
 }
 
 header h1{
-    background-color: lightsalmon; 
+    background: linear-gradient(90deg, #3498db, #04c9f0); 
     padding: 20px; 
     text-align: center; 
     border-radius: 10px; 
@@ -24,7 +24,7 @@ header h1{
 }
 
 .Encabezado{
-    background-color: salmon; 
+    background: linear-gradient(90deg, #ff0077, #cd04f0);
     padding: 20px; 
     text-align: center;
     border-radius: 20px;
@@ -54,7 +54,7 @@ nav ul li{
 }
 
 .Secciones {
-    background-color: salmon;
+    background: linear-gradient(90deg, #00fff2, #0453f0);
     overflow: hidden;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
@@ -75,7 +75,7 @@ nav ul li{
   }
   
 .Secciones a.active {
-    background-color: #04AA6D;
+    background-color: #aa0404;
     color: white;
   }
 
@@ -85,19 +85,10 @@ nav ul li{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.medicinas{
+.productos {
     display: flex;
     justify-content: center;
     gap: 200px; 
-    flex-wrap: wrap; 
-    padding: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.medicinas2{
-    display: flex;
-    justify-content: center;
-    gap: 20px; 
     flex-wrap: wrap; 
     padding: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -117,7 +108,7 @@ nav ul li{
     transform: scale(1.05);
 }
 
-.medica {
+.imagen {
     display: flex;
     justify-content: center;
     max-width: 100%;
@@ -138,14 +129,14 @@ nav ul li{
 
 .precio {
     font-size: 16px;
-    color: lightsalmon;
+    color: rgb(180, 122, 255);
     font-weight: bold;
 }
 
 
-.footer {
+footer {
     grid-area: footer;
-    background-color: lightcoral;
+    background: linear-gradient(90deg, #3498db, #04c9f0);
     color: black;
     text-align: center;
     padding: 10px 0;

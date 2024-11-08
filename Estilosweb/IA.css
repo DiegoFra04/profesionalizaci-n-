@@ -1,5 +1,5 @@
 header h1{
-    background-color: lightblue; 
+    background: linear-gradient(90deg, #3498db, #04c9f0); 
     padding: 20px; 
     text-align: center; 
     border-radius: 10px; 
@@ -20,7 +20,7 @@ header h1{
 }
 
 .Encabezado{
-    background-color: lightskyblue; 
+    background: linear-gradient(90deg, #003066, #006aff);
     padding: 20px; 
     text-align: center;
     border-radius: 20px;
@@ -52,7 +52,7 @@ nav ul li{
 }
 
 .Secciones {
-    background-color: lightskyblue;
+    background: linear-gradient(90deg, #00fff2, #0453f0);
     overflow: hidden;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
@@ -139,9 +139,10 @@ nav ul li{
 }
 
 
-.footer {
-    background-color: lightskyblue;
-    color: white;
+footer {
+    grid-area: footer;
+    background: linear-gradient(90deg, #3498db, #04c9f0);
+    color: black;
     text-align: center;
     padding: 10px 0;
     width: 100%;

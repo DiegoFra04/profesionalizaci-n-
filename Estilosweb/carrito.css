@@ -1,17 +1,18 @@
 header h1{
-    background-color: gold; 
-    padding: 20px; 
-    text-align: center; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: rgb(1, 73, 93);
-    font-size: 36px; 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bold; 
-    letter-spacing: 2px; 
-    text-transform: uppercase; 
-    margin: 0;
+  background: linear-gradient(90deg, #3498db, #04c9f0); 
+  padding: 20px; 
+  text-align: center; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: rgb(1, 73, 93);
+  font-size: 36px; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold; 
+  letter-spacing: 2px; 
+  text-transform: uppercase; 
+  margin: 0;
 }
+
 .contenedor {
   display: flex;
   justify-content: center; 
@@ -19,7 +20,7 @@ header h1{
 }
 
 .Encabezado{
-  background-color: darkgoldenrod; 
+  background: linear-gradient(90deg, #007144, #006108);
   padding: 20px; 
   text-align: center;
   border-radius: 20px;
@@ -50,7 +51,7 @@ nav ul li{
 }
 
 .Secciones {
-    background-color: goldenrod;
+    background: linear-gradient(90deg, #00fff2, #0453f0);
     overflow: hidden;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
@@ -93,9 +94,10 @@ nav ul li{
     box-shadow: 0 15px 8px rgba(0, 0, 0, 0.1);
 }
 
-.footer {
-  background-color: goldenrod;
-  color: white;
+footer {
+  grid-area: footer;
+  background: linear-gradient(90deg, #3498db, #04c9f0);
+  color: black;
   text-align: center;
   padding: 10px 0;
   width: 100%;
@@ -137,7 +139,7 @@ a{
 }
 
 .product button {
-  background-color: darkgoldenrod;
+  background: linear-gradient(90deg, #007144, #006108);
   color: white;
   border: none;
   padding: 10px;
@@ -147,7 +149,7 @@ a{
 }
 
 .product button:hover {
-  background-color: darkgoldenrod;
+  background: linear-gradient(90deg, #007144, #006108);
 }
 
 /* Estilo para el carrito */
@@ -187,7 +189,7 @@ a{
 }
 
 .cart button {
-  background-color: darkgoldenrod;
+  background: linear-gradient(90deg, #007144, #006108);
   color: white;
   border: none;
   padding: 10px;
@@ -198,9 +200,8 @@ a{
 }
 
 .cart button:hover {
-  background-color: goldenrod;
+  background: linear-gradient(90deg, #00fb97, #02ff17);
 }
-
 .boto{
   color: white;
 }

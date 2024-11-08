@@ -18,7 +18,7 @@ function loadCart() {
         total += itemTotal;
         const li = document.createElement('li');
         li.innerHTML = `
-            ${item.name} - $${item.price} x ${item.quantity} = $${itemTotal}
+            ${item.name} (${item.quantity}) = $${itemTotal}
             <button onclick="removeFromCart(${index})">Eliminar</button>
         `;
         cartItems.appendChild(li);
