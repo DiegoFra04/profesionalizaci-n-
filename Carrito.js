@@ -125,20 +125,20 @@ function checkout() {
         return;
     }
 
-    // Validar el formulario de pago
     if (validatePaymentForm()) {
-        // Calcular el total del carrito
+        // Calcular el total
         let total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
         
-        // Mostrar mensaje de confirmación
         alert(`Compra completada. El total de la compra realizada fue de: $${total}`);
-        
-        // Limpiar el carrito y recargar
 
-        // Redirigir al usuario al carrito después del pago
-        window.location.href = "Carrito.html";
+        // Evitar limpiar el carrito si el pago fue exitoso.
+        
+        // Redirigir al ticket de compra
+        window.location.href = "ticket.html";
+        } else {
+            alert("Por favor, complete la información de pago correctamente.");
+        }
     }
-}
 
 function checkCart() {
     // Obtener el carrito desde localStorage

@@ -77,11 +77,21 @@
             loadCart();
 
         window.onload = loadCart;
-        };
-        
+        }
+
         // Función para imprimir el ticket
         function printTicket() {
             window.print();
+        }
+
+        window.onload = loadCart;
+
+        // Función para imprimir el ticket y limpiar el carrito
+        function printTicket() {
+            window.print();
+            
+            // Limpiar el carrito después de la impresión
+            localStorage.removeItem("cart");
         }
         
     </script>

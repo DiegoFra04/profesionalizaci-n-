@@ -73,3 +73,9 @@ body {
 .btn-print:hover{
     background: linear-gradient(90deg, #00eaff, #006aff);
 }
+
+@media print {
+    .btn-print {
+        display: none;
+    }
+}
