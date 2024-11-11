@@ -73,7 +73,27 @@ body {
 .btn-print:hover{
     background: linear-gradient(90deg, #00eaff, #006aff);
 }
-
+.btn {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+.btn-finish {
+    background: linear-gradient(90deg, #4ba000, #00c427);
+}
+.btn-print:hover{
+    background: linear-gradient(90deg, #77ff00, #00ff33);
+}
 @media print {
     .btn-print {
         display: none;

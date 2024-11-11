@@ -140,18 +140,18 @@ function checkout() {
         }
     }
 
-function checkCart() {
-    // Obtener el carrito desde localStorage
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    
-    // Verificar si el carrito está vacío
-    if (cart.length === 0) {
-        alert("El carrito está vacío.");
-        return;
+    function checkCart() {
+        // Obtener el carrito desde localStorage
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        
+        // Verificar si el carrito está vacío
+        if (cart.length === 0) {
+            alert("El carrito está vacío.");
+            return;
+        }
+        
+        // Si hay productos en el carrito, redirigir a la página de pago
+        window.location.href = "pago.html";
     }
-    
-    // Si hay productos en el carrito, redirigir a la página de pago
-    window.location.href = "pago.html";
-}
 
 
