@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Estilosweb/ticket.css">
+    <title>Ticket</title>
+</head>
+<body>
+    <div class="ticket" id="ticket">
+        <div class="elegant-image-container">
+            <img src="imagenes/TecnoHonshitsu.jpeg" alt="Tecnologia Honshitsu">
+        </div>
+        <div class="ticket-header">
+            <h2>TECNOLOGIA HONSHITSU</h2>
+            <p>Fecha: <span id="date"></span></p>
+        </div>
+        <div class="ticket-body" id="ticket-items">
+        <!-- Aquí se mostrarán los productos del carrito -->
+        </div>
+        <div class="ticket-total" onclick="checkout()">
+            Total: <span class="total" id="total-amount">$0.00</span>
+        </div>
+
+        <button class="btn-print" onclick="printTicket()">Imprimir Ticket</button>
+    </div>
+    
+    <script>
+        function checkout() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            
+            if (cart.length === 0) {
+                alert("El carrito está vacío.");
+                return;
+            }
+
+            if (validatePaymentForm()) {
+                let total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+                alert(`Compra completada. El total de la compra realizada fue de: $${total}`);
+
+                // Redirigir a ticket.html para mostrar el ticket
+                window.location.href = "ticket.html";
+            }
+        }
+        // Mostrar la fecha actual
+        const date = new Date();
+        document.getElementById("date").textContent = 
+            `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+
+        // Cargar el carrito en el ticket
+        function loadCart() {
+            const cartItems = document.getElementById('ticket-items');
+            cartItems.innerHTML = '';
+            let total = 0;
+
+            // Obtener el carrito desde localStorage
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Mostrar cada producto en el ticket
+            cart.forEach((item) => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+
+                const div = document.createElement('div');
+                div.classList.add("item");
+                div.innerHTML = `<span>${item.name}</span><span>${item.quantity} x $${item.price.toFixed(2)}</span>`;
+                cartItems.appendChild(div);
+            });
+
+            // Actualizar el total
+            document.getElementById('total-amount').textContent = `$${total.toFixed(2)}`;
+        }
+
+        // Llamar a loadCart al cargar la página
+        window.onload = function() {
+            loadCart();
+
+        window.onload = loadCart;
+        };
+        
+        // Función para imprimir el ticket
+        function printTicket() {
+            window.print();
+        }
+        
+    </script>
+</body>
+</html>

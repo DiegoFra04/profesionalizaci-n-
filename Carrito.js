@@ -134,8 +134,6 @@ function checkout() {
         alert(`Compra completada. El total de la compra realizada fue de: $${total}`);
         
         // Limpiar el carrito y recargar
-        localStorage.removeItem("cart");
-        loadCart();
 
         // Redirigir al usuario al carrito después del pago
         window.location.href = "Carrito.html";
