@@ -1,7 +1,7 @@
-/* Contenedor principal */
+
 .payment-container {
     width: 100%;
-    max-width: 2200px; /* Ancho máximo para pantallas grandes */
+    max-width: 2200px; 
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -12,13 +12,13 @@
 }
 
 input[type="text"], input[type="password"] {
-    width: 100%; /* Hace que los campos ocupen todo el ancho */
+    width: 100%; 
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 15px;
     box-sizing: border-box;
 }
-/* Encabezado */
+
 .Encabezado {
     background: linear-gradient(90deg, #007144, #006108);
     padding: 20px;
@@ -34,7 +34,6 @@ input[type="text"], input[type="password"] {
     margin-bottom: 20px;
 }
 
-/* Sección de pago */
 .payment-section {
     background-color: #ffffff;
     padding: 30px;
@@ -46,20 +45,17 @@ input[type="text"], input[type="password"] {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-/* Título de la sección */
 .payment-section h2 {
     font-size: 24px;
     color: #333;
     margin-bottom: 10px;
 }
 
-/* Texto de información */
 .payment-section .e {
     color: #666;
     margin-bottom: 20px;
 }
 
-/* Etiquetas y campos de entrada */
 .payment-section label {
     display: block;
     text-align: left;
@@ -79,7 +75,6 @@ input[type="text"], input[type="password"] {
     box-sizing: border-box;
 }
 
-/* Detalles de la tarjeta (Fecha de expiración y CVV) */
 .card-details {
     display: flex;
     gap: 15px;
@@ -87,10 +82,9 @@ input[type="text"], input[type="password"] {
 }
 
 .card-details input {
-    width: calc(50% - 5px); /* Cada input ocupa la mitad del espacio */
+    width: calc(50% - 5px); 
 }
 
-/* Botón de confirmación */
 .confirm-button {
     background: linear-gradient(90deg, #007144, #006108);
     color: black;
@@ -153,31 +147,29 @@ a {
 
 #cart-items,
 #total {
-    font-family: 'Arial', sans-serif; /* Fuente limpia y moderna */
-    margin: 10px auto; /* Espaciado */
-    padding: 15px; /* Espaciado interno */
-    border-radius: 10px; /* Bordes redondeados */
-    max-width: 400px; /* Ancho máximo */
-    background-color: #e3f2fd; /* Azul claro para el fondo */
-    color: #0d47a1; /* Azul oscuro para el texto */
-    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.2); /* Sombra azulada */
-    border: 2px solid #90caf9; /* Borde azul claro */
+    font-family: 'Arial', sans-serif; 
+    margin: 10px auto; 
+    padding: 15px; 
+    border-radius: 10px; 
+    max-width: 400px; 
+    background-color: #e3f2fd; 
+    color: #0d47a1; 
+    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.2); 
+    border: 2px solid #90caf9; 
 }
 
-/* Encabezado del carrito */
 #cart-items {
-    font-size: 1rem; /* Tamaño del texto */
-    border-bottom: 2px solid #bbdefb; /* Línea divisoria azul claro */
+    font-size: 1rem; 
+    border-bottom: 2px solid #bbdefb; 
     padding-bottom: 10px;
-    color: #1565c0; /* Azul intermedio para el texto */
+    color: #1565c0; 
 }
 
-/* Total */
 #total {
-    font-size: 1.2rem; /* Tamaño más grande */
-    font-weight: bold; /* Texto en negrita */
-    color: #0d47a1; /* Azul oscuro más elegante */
-    text-align: right; /* Alinear a la derecha */
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    color: #0d47a1; 
+    text-align: right; 
 }
 
 .nombre{

@@ -8,11 +8,9 @@ function loadCart() {
     let total = 0;
     
     
-    // Obtener el carrito desde localStorage
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 
-    // Mostrar cada producto en el carrito
     cart.forEach((item, index) => {
         const itemTotal = item.price * item.quantity;
         total += itemTotal;
@@ -25,21 +23,18 @@ function loadCart() {
     });
 
     
-    // Actualizar el total
     document.getElementById('total').innerText = `Total: $${total}`;
 
 }
 
-// Función para eliminar un producto del carrito
 function removeFromCart(index) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.splice(index, 1); // Eliminar el producto del carrito por índice
-    localStorage.setItem("cart", JSON.stringify(cart)); // Guardar el carrito actualizado
-    loadCart(); // Recargar el carrito para reflejar los cambios
+    cart.splice(index, 1); 
+    localStorage.setItem("cart", JSON.stringify(cart)); 
+    loadCart(); 
 }
 
 function validatePaymentForm() {
-    // Obtener los valores de los campos del formulario
     const name = document.getElementById("card-name").value.trim();
     const cardNumber = document.getElementById("card-number").value.trim();
     const expiryDate = document.getElementById("expiry-date").value.trim();
@@ -47,7 +42,6 @@ function validatePaymentForm() {
 
     let isValid = true;
 
-    // Validar Nombre en la Tarjeta (no vacío, solo letras y espacios)
     if (name === "") {
         showError("card-name-error", "El nombre no puede estar vacío.");
         isValid = false;
@@ -58,7 +52,6 @@ function validatePaymentForm() {
         clearError("card-name-error");
     }
 
-    // Validar Número de Tarjeta (16 dígitos exactos)
     if (cardNumber === "") {
         showError("card-number-error", "El número de tarjeta no puede estar vacío.");
         isValid = false;
@@ -69,7 +62,6 @@ function validatePaymentForm() {
         clearError("card-number-error");
     }
 
-    // Validar Fecha de Expiración (formato MM/AA)
     if (expiryDate === "") {
         showError("expiry-date-error", "La fecha de expiración no puede estar vacía.");
         isValid = false;
@@ -80,7 +72,6 @@ function validatePaymentForm() {
         clearError("expiry-date-error");
     }
 
-    // Validar CVV (3 dígitos exactos)
     if (cvv === "") {
         showError("cvv-error", "El CVV no puede estar vacío.");
         isValid = false;
@@ -91,7 +82,6 @@ function validatePaymentForm() {
         clearError("cvv-error");
     }
 
-    // Si todas las validaciones son correctas
     if (isValid) {
         alert("Pago confirmado");
     }
@@ -105,7 +95,6 @@ function validatePaymentForm() {
         errorElement.style.display = "block";
     }
     
-    // Función para limpiar mensajes de error
     function clearError(elementId) {
         const errorElement = document.getElementById(elementId);
         errorElement.textContent = "";
@@ -116,24 +105,20 @@ function validatePaymentForm() {
 
 
 function checkout() {
-    // Obtener el carrito desde localStorage
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Verificar si el carrito está vacío
     if (cart.length === 0) {
         alert("El carrito está vacío.");
         return;
     }
 
     if (validatePaymentForm()) {
-        // Calcular el total
+
         let total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
         
         alert(`Compra completada. El total de la compra realizada fue de: $${total}`);
 
-        // Evitar limpiar el carrito si el pago fue exitoso.
         
-        // Redirigir al ticket de compra
         window.location.href = "ticket.html";
         } else {
             alert("Por favor, complete la información de pago correctamente.");
@@ -141,16 +126,14 @@ function checkout() {
     }
 
     function checkCart() {
-        // Obtener el carrito desde localStorage
+
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
         
-        // Verificar si el carrito está vacío
         if (cart.length === 0) {
             alert("El carrito está vacío.");
             return;
         }
         
-        // Si hay productos en el carrito, redirigir a la página de pago
         window.location.href = "pago.html";
     }
 

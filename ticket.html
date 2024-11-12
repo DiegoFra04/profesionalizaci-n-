@@ -16,7 +16,6 @@
             <p>Fecha: <span id="date"></span></p>
         </div>
         <div class="ticket-body" id="ticket-items">
-        <!-- Aquí se mostrarán los productos del carrito -->
         </div>
         <div class="ticket-total" onclick="checkout()">
             Total: <span class="total" id="total-amount">$0.00</span>
@@ -40,25 +39,20 @@
 
                 alert(`Compra completada. El total de la compra realizada fue de: $${total}`);
 
-                // Redirigir a ticket.html para mostrar el ticket
                 window.location.href = "ticket.html";
             }
         }
-        // Mostrar la fecha actual
         const date = new Date();
         document.getElementById("date").textContent = 
             `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
 
-        // Cargar el carrito en el ticket
         function loadCart() {
             const cartItems = document.getElementById('ticket-items');
             cartItems.innerHTML = '';
             let total = 0;
 
-            // Obtener el carrito desde localStorage
             const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-            // Mostrar cada producto en el ticket
             cart.forEach((item) => {
                 const itemTotal = item.price * item.quantity;
                 total += itemTotal;
@@ -69,11 +63,9 @@
                 cartItems.appendChild(div);
             });
 
-            // Actualizar el total
             document.getElementById('total-amount').textContent = `$${total.toFixed(2)}`;
         }
 
-        // Llamar a loadCart al cargar la página
         window.onload = function() {
             loadCart();
 

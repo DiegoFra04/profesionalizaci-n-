@@ -51,7 +51,6 @@
     </footer>
 
     <script>
-        // Función para agregar productos al carrito y guardarlos en localStorage
         function addToCart(productName, price, quantityId) {
             const quantity = parseInt(document.getElementById(quantityId).value);
 
@@ -60,10 +59,8 @@
                 return;
             }
 
-            // Obtener el carrito del localStorage o inicializar uno vacío
             let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-            // Verificar si el producto ya existe en el carrito
             const existingProduct = cart.find(item => item.name === productName);
             if (existingProduct) {
                 existingProduct.quantity += quantity;
@@ -71,7 +68,6 @@
                 cart.push({ name: productName, price: price, quantity: quantity });
             }
 
-            // Guardar el carrito actualizado en localStorage
             localStorage.setItem("cart", JSON.stringify(cart));
             alert(`${productName} agregado al carrito`);
         }

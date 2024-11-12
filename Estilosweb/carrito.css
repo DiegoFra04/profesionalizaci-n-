@@ -84,8 +84,7 @@ nav ul li{
 }
 
 .margen{
-    display: flex;/*
-    background-color: #fff;*/
+    display: flex;
     background-color: lightyellow;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -109,17 +108,15 @@ a{
   text-decoration: none;
 }
 
-/* Contenedor principal */
 .store-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: Arial, sans-serif;
-  min-height: 70vh; /* Aumenta el espacio vertical */
-  justify-content: center; /* Centrar verticalmente */
+  min-height: 70vh; 
+  justify-content: center; 
 }
 
-/* Estilo para los productos */
 .products {
   display: flex;
   gap: 20px;
@@ -152,10 +149,9 @@ a{
   background: linear-gradient(90deg, #007144, #006108);
 }
 
-/* Estilo para el carrito */
 .cart {
   width: 300px;
-  min-height: 300px; /* Añadido para estirar el contenedor */
+  min-height: 300px; 
   background-color: #f9f9f9;
   padding: 20px;
   border-radius: 10px;
@@ -163,16 +159,16 @@ a{
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Para estirar y centrar el contenido */
-  margin-bottom: 40px; /* Espacio adicional para separación */
+  justify-content: space-between; 
+  margin-bottom: 40px; 
 }
 
 .cart ul {
   list-style-type: none;
   padding: 0;
-  margin-bottom: 20px; /* Espacio para los elementos */
+  margin-bottom: 20px; 
   flex-grow: 1;
-  overflow-y: auto; /* Scroll si hay muchos productos */
+  overflow-y: auto; 
 }
 
 .cart li {
@@ -185,7 +181,7 @@ a{
 .cart p {
   font-weight: bold;
   margin-top: 10px;
-  margin: 20px 0; /* Espacio adicional para el total */
+  margin: 20px 0; 
 }
 
 .cart button {
